@@ -1,8 +1,7 @@
 ### Diet Tracker App
 A Flutter app 
 <br><br>
-This App is being developed as a hobby project.
-The App is live and hosted on [Firebase](https://diettracker-d061a.web.app/)
+This App is being developed as a hobby project and is live and hosted on [Firebase](https://diettracker-d061a.web.app/)
 
 The concept of the app is to achieve a tool for tracking calorie and micronutrient intake.
 
