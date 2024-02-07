@@ -2,6 +2,9 @@
 A Flutter app 
 <br><br>
 This App is being developed as a hobby project and is live and hosted on [Firebase.com](https://diettracker-d061a.web.app/).
+There is a test user with the following credentials.
+user     : test@test.com
+password : test123
 
 The concept of the app is to achieve a tool for tracking calorie and micronutrient intake.
 
