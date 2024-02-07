@@ -6,13 +6,12 @@ This App is being developed as a hobby project.
 The concept of the app is to achieve a tool for tracking calorie and micronutrient intake.
 
 Key Features
-
 - Calorie Counter
 - Micronutrient Tracking (under development)
 - Food item database
 - Meal database (under development)
 - Intuitive Food Diary
-- Progress Overview of intake and weigth changes (under development)
+- Progress Overview of intake and weight changes (under development)
 
 <br>
 <img src="https://github.com/MCAgithub/diet_tracker_app/assets/134640613/69282e07-e3e7-4668-a1f1-432bce1dfa7d" width="250">
