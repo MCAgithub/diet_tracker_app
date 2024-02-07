@@ -1,6 +1,6 @@
 ### Diet Tracker App
 A Flutter app 
-<br>
+<br><br>
 This App is being developed as a hobby project.
 
 The app 
