@@ -3,7 +3,7 @@ A Flutter app
 <br><br>
 This App is being developed as a hobby project.
 
-The concept of the app is to acheive a tool for tracking calory and micro nutients intake.
+The concept of the app is to achieve a tool for tracking calorie and micronutrient intake.
 
 Key Features
 
