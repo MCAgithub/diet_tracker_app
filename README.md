@@ -13,4 +13,4 @@ The app
 The App is live and hosted on [Firebase](https://diettracker-d061a.web.app/)
 
 ## App Diagram
-<img src="https://github.com/MCAgithub/gejserbar_guldkort_app/assets/134640613/3e3d092e-7231-4f5e-8b1f-b8890bf7754f" width="750">
+<img src="https://github.com/MCAgithub/diet_tracker_app/assets/134640613/486543da-04b7-47cb-af49-a212896d374f" width="750">
