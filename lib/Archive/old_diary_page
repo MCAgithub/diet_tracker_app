@@ -1,0 +1,150 @@
+import 'package:diet_tracker_app/Widgets/my_sliverappbar.dart';
+import 'package:flutter/material.dart';
+import 'package:diet_tracker_app/Widgets/my_circularpainter.dart';
+
+class DiaryPage extends StatefulWidget {
+  const DiaryPage({
+    super.key,
+    required this.cal,
+    required this.maxcal,
+    required this.meals,
+  });
+
+  final int cal;
+  final int maxcal;
+  //final List<Meal> meals;
+  final ValueNotifier<List<MealElement>> meals;
+
+  @override
+  State<DiaryPage> createState() => _DiaryPageState();
+}
+
+class _DiaryPageState extends State<DiaryPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<List<MealElement>>(
+        valueListenable: widget.meals,
+        builder: (context, meals, child) {
+          return CustomScrollView(
+            slivers: [
+              MySliverAppBar(
+                title: 'Dagen',
+                appbarHeight: 350,
+                centerWidget: CustomPaint(
+                  painter:
+                      CircularPaint(progressValue: widget.cal / widget.maxcal),
+                  child: Center(
+                      child: Text(
+                    widget.cal.toString(),
+                    style: const TextStyle(color: Colors.white),
+                  )),
+                ),
+                stackedWidget: const Positioned(
+                bottom: 20.0, left: 0, right: 0, child: NutrientsWidget()),
+              ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return meals[index];
+                  },
+                  childCount: meals.length,
+                ),
+              )
+            ],
+          );
+        });
+  }
+}
+
+
+
+class NutrientsWidget extends StatelessWidget {
+  const NutrientsWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Material(
+          elevation: 4,
+          //clipBehavior: Clip.hardEdge,
+          borderRadius: BorderRadius.circular(20),
+          child: SizedBox(
+            height: 75,
+            width: MediaQuery.of(context).size.width-100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Spacer(),
+                Text(
+                  'Kulhydrater',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const Spacer(),
+                Text(
+                  'Protein',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const Spacer(),
+                Text(
+                  'Fedt',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const Spacer(),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class MealElement extends StatelessWidget {
+  final String name;
+  const MealElement({
+    super.key,
+    required this.name
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      //crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Material(
+            elevation: 4,
+            clipBehavior: Clip.hardEdge,
+            borderRadius: BorderRadius.circular(20),
+            child: SizedBox(
+              height: 200,
+              width: MediaQuery.of(context).size.width-120,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.ac_unit_sharp),
+                  Text(
+                    'data',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
